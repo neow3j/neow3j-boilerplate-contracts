@@ -2,7 +2,7 @@
 
 :point_right: This is a boilerplate for a neow3j project. It brings the minimum amount of code to compile your first "hello world" Neo3 smart contract. 
 
-:rotating_light::rotating_light::rotating_light: **IMPORTANT:**
+:rotating_light: **Dependency:**:rotating_light:
 
 * Make sure you have [Java 1.8](https://adoptopenjdk.net/installation.html) (or higher) installed.
 
