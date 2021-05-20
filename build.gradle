@@ -14,9 +14,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'io.neow3j:contract:3.10.0'
     implementation 'io.neow3j:devpack:3.10.0'
-    implementation 'io.neow3j:compiler:3.10.0'
     implementation 'junit:junit:4.12'
 }
 
