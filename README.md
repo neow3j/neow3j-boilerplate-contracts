@@ -1,6 +1,6 @@
 # neow3j-boilerplate
 
-This is a boilerplate for a neow3j project. It brings the minimum amount of code to compile your first `hello world` smart contract for Neo N3.
+This is boilerplate code for a neow3j devpack project. It brings the minimum amount of code to compile your first `hello world` smart contract for Neo N3.
 
 ## Quickstart
 
