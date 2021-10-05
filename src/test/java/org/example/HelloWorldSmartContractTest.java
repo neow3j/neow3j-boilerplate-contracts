@@ -1,4 +1,4 @@
-package io.neow3j;
+package org.example;
 
 import io.neow3j.contract.SmartContract;
 import io.neow3j.protocol.Neow3jExpress;

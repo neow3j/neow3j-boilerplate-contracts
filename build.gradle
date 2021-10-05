@@ -3,13 +3,14 @@ plugins {
     id 'io.neow3j.gradle-plugin' version '3.13.0'
 }
 
-group 'io.neow3j'
+group 'org.example'
 version '1.0-SNAPSHOT'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 repositories {
+    mavenLocal()
     mavenCentral()
 }
 
@@ -25,6 +26,5 @@ tasks.withType(Test) {
 }
 
 neow3jCompiler {
-    className = "io.neow3j.HelloWorldSmartContract"
-    debug = true
+    className = "org.example.HelloWorldSmartContract"
 }

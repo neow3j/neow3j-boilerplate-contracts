@@ -1,12 +1,11 @@
 # neow3j-boilerplate
 
-This is boilerplate code for a neow3j devpack project. It brings the minimum amount of code to compile your first `hello world` smart contract for Neo N3.
+This is a boilerplate project setup for Java smart contracts. It brings the minimum amount of code
+to compile and test a "Hello World" smart contract for Neo N3.
 
 ## Quickstart
 
 > Make sure you have [Java 1.8](https://adoptopenjdk.net/installation.html) (or higher) installed.
-
-Follow these **deadly** easy steps:
 
 1. **Clone this git repo:**
 
@@ -38,9 +37,23 @@ drwxr-xr-x  7 user  wheel  224 23 Feb 17:40 ..
 -rw-r--r--  1 user  wheel  430 23 Feb 17:40 HelloWorldSmartContract.nefdbgnfo
 ```
 
-5. **Yayyyy!** :rocket: :tada:
+5. **Give us a GitHub star! :star::star::star:**
 
-6. **Give us a GitHub star! :star::star::star:**
+## Adapting the Boilerplate Code
+
+To adapt the boilerplate project to your own smart contract project, make sure to apply the
+following changes.
+
+- Project name. I.e., the root folder's name and the `rootProject.name` property in the
+  *settings.gradle* file.
+- Name of the contract. I.e., the name of the class and the value in the `@DisplayName`
+  annotation on the contract class.
+- Name of the author. I.e., the value in the `@ManifestExtra(key = "author", value = "Your Name")`
+  annotation on the contract class.
+- Package name.
+- Group name. I.e., the `group 'org.example'` property in the *build.gradle* file.
+- Neow3j Gradle plugin property `className = "org.example.HelloWorldSmartContract"` in the
+  *build.gradle* file according to the new package and class name you chose.
 
 ## About
 
