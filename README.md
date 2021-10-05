@@ -5,7 +5,9 @@ to compile and test a "Hello World" smart contract for Neo N3.
 
 ## Quickstart
 
-> Make sure you have [Java 1.8](https://adoptopenjdk.net/installation.html) (or higher) installed.
+> [Java 1.8](https://adoptopenjdk.net/installation.html) (or higher) is required.
+> [Docker](https://www.docker.com/products/docker-desktop) is required for running smart contract 
+  tests.
 
 1. **Clone this git repo:**
 
@@ -37,7 +39,13 @@ drwxr-xr-x  7 user  wheel  224 23 Feb 17:40 ..
 -rw-r--r--  1 user  wheel  430 23 Feb 17:40 HelloWorldSmartContract.nefdbgnfo
 ```
 
-5. **Give us a GitHub star! :star::star::star:**
+5. **Run the contract test**
+
+```bash
+./gradlew test
+```
+
+6. **Give us a GitHub star! :star::star::star:**
 
 ## Adapting the Boilerplate Code
 
