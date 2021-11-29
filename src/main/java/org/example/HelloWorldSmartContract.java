@@ -18,7 +18,7 @@ public class HelloWorldSmartContract {
     static String aString = "${change_this}";
 
     @OnDeployment
-    public static void deploy(Object data, boolean update) throws Exception {
+    public static void deploy(Object data, boolean update) {
         if (!update) {
             Storage.put(ctx, OWNER_KEY, (Hash160) data);
         }
