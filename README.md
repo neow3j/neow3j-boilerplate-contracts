@@ -49,8 +49,8 @@ drwxr-xr-x  7 user  wheel  224 23 Feb 17:40 ..
 
 ## Adapting the Boilerplate Code
 
-To adapt the boilerplate project to your own smart contract project, make sure to apply the
-following changes.
+To adapt the boilerplate project to your own smart contract project, here are some things that 
+you will have to change in the code.
 
 - Project name. I.e., the root folder's name and the `rootProject.name` property in the
   *settings.gradle* file.
@@ -62,6 +62,7 @@ following changes.
 - Group name. I.e., the `group 'org.example'` property in the *build.gradle* file.
 - Neow3j Gradle plugin property `className = "org.example.HelloWorldSmartContract"` in the
   *build.gradle* file according to the new package and class name you chose.
+- And of course the contract tests in `HelloWorldSmartContractTest`.
 
 ## About
 
