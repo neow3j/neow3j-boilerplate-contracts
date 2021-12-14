@@ -38,10 +38,12 @@ public class HelloWorldSmartContractTest {
     }
 
     @DeployConfig(HelloWorldSmartContract.class)
-    public static void configure(DeployConfiguration conf) {
+    public static DeployConfiguration configure() {
+        DeployConfiguration config = new DeployConfiguration();
         ContractParameter owner = hash160(Hash160.fromAddress(OWNER_ADDRESS));
-        conf.setDeployParam(owner);
-        conf.setSubstitution("${change_this}", "A string value.");
+        config.setDeployParam(owner);
+        config.setSubstitution("${change_this}", "A string value.");
+        return config;
     }
 
     @Test
