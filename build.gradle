@@ -1,6 +1,6 @@
 plugins {
     id 'java'
-    id 'io.neow3j.gradle-plugin' version '3.14.1'
+    id 'io.neow3j.gradle-plugin' version '3.15.0'
 }
 
 group 'org.example'
@@ -14,10 +14,10 @@ repositories {
 }
 
 dependencies {
-    implementation 'io.neow3j:devpack:3.14.1'
+    implementation 'io.neow3j:devpack:3.15.0'
 
-    testImplementation 'org.junit.jupiter:junit-jupiter:5.8.1',
-            'io.neow3j:devpack-test:3.14.1'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.8.2',
+            'io.neow3j:devpack-test:3.15.0'
 }
 
 tasks.withType(Test) {
