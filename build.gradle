@@ -3,7 +3,7 @@ plugins {
     id 'io.neow3j.gradle-plugin' version '3.15.0'
 }
 
-group 'org.example'
+group 'com.axlabs'
 version '1.0-SNAPSHOT'
 
 sourceCompatibility = 1.8
@@ -13,11 +13,22 @@ repositories {
     mavenCentral()
 }
 
+sourceSets {
+    deploy {
+        compileClasspath += sourceSets.main.output
+        runtimeClasspath += sourceSets.main.output
+    }
+}
+
 dependencies {
     implementation 'io.neow3j:devpack:3.15.0'
 
     testImplementation 'org.junit.jupiter:junit-jupiter:5.8.2',
-            'io.neow3j:devpack-test:3.15.0'
+            'io.neow3j:devpack-test:3.15.0',
+            'ch.qos.logback:logback-classic:1.2.10'
+
+    deployImplementation 'io.neow3j:compiler:3.15.0',
+            'ch.qos.logback:logback-classic:1.2.10'
 }
 
 tasks.withType(Test) {
@@ -25,5 +36,5 @@ tasks.withType(Test) {
 }
 
 neow3jCompiler {
-    className = "org.example.HelloWorldSmartContract"
+    className = "com.axlabs.helloworld.HelloWorldSmartContract"
 }

@@ -1,4 +1,4 @@
-package org.example;
+package com.axlabs.helloworld;
 
 import io.neow3j.devpack.ByteString;
 import io.neow3j.devpack.Hash160;
@@ -15,7 +15,7 @@ public class HelloWorldSmartContract {
     static final String OWNER_KEY = "owner";
     static StorageContext ctx = Storage.getStorageContext();
 
-    static String aString = "${change_this}";
+    static String aString = "${placeholder}";
 
     @OnDeployment
     public static void deploy(Object data, boolean update) {

@@ -1,4 +1,4 @@
-package org.example;
+package com.axlabs.helloworld;
 
 import io.neow3j.contract.SmartContract;
 import io.neow3j.protocol.Neow3j;
@@ -42,7 +42,7 @@ public class HelloWorldSmartContractTest {
         DeployConfiguration config = new DeployConfiguration();
         ContractParameter owner = hash160(Hash160.fromAddress(OWNER_ADDRESS));
         config.setDeployParam(owner);
-        config.setSubstitution("${change_this}", "A string value.");
+        config.setSubstitution("${placeholder}", "A string value.");
         return config;
     }
 
