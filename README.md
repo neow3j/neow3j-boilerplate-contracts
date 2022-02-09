@@ -45,31 +45,23 @@ drwxr-xr-x  7 user  wheel  224 23 Feb 17:40 ..
 ./gradlew test
 ```
 
-6. **Give us a GitHub star! :star::star::star:**
+6. **Deploy the contract**
 
-## Adapting the Boilerplate Code
+- Run a local [Neo Express](https://github.com/neo-project/neo-express) instance. The project 
+- includes a Neo Express configuration file.
+- Fund Alice's account: `neoxp transfer 100 GAS genesis alice`
+- Go to the `com.axlabs.helloworld.Deployment` class and run it.
 
-To adapt the boilerplate project to your own smart contract project, here are some things that 
-you will have to change in the code.
-
-- Project name. I.e., the root folder's name and the `rootProject.name` property in the
-  *settings.gradle* file.
-- Name of the contract. I.e., the name of the class and the value in the `@DisplayName`
-  annotation on the contract class.
-- Name of the author. I.e., the value in the `@ManifestExtra(key = "author", value = "Your Name")`
-  annotation on the contract class.
-- Package name.
-- Group name. I.e., the `group 'org.example'` property in the *build.gradle* file.
-- Neow3j Gradle plugin property `className = "org.example.HelloWorldSmartContract"` in the
-  *build.gradle* file according to the new package and class name you chose.
-- And of course the contract tests in `HelloWorldSmartContractTest`.
+7. **Give us a GitHub star! :star::star::star:**
 
 ## About
 
-Neow3j is a development toolkit that provides easy and reliable tools to build Neo dApps and Smart
-Contracts using the Java platform (Java, Kotlin, Android).
+Neow3j is a Java SDK and smart contract devpack that provides easy and reliable tools to build Neo
+dApps and Smart Contracts using the Java platform (Java, Kotlin, Android).
 
-It is an open-source project developed by the community and maintained by
+Check out [neow3j.io](https://neow3j.io) for more information on neow3j and the technical
+documentation.
+
+Neow3j is an open-source project developed by the community and maintained by
 [AxLabs](https://axlabs.com).
 
-Check out [neow3j.io](https://neow3j.io) for more information on neow3j and the technical documentation.
