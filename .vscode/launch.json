@@ -1,0 +1,35 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    ///////////////////////////////////////////////////////////
+    // Launch configuration for the HelloWorldSmartContract. //
+    ///////////////////////////////////////////////////////////
+    {
+      "name": "HelloWorldSmartContract",
+      "type": "neo-contract",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/neow3j/HelloWorld.nef",
+      "neo-express": "${workspaceFolder}/default.neo-express",
+      "invocation": {
+        "operation": "getOwner",
+        "args": []
+      },
+      "storage": [
+        {
+          "key": "owner",
+          "value": "@NNSyinBZAr8HMhjj95MfkKD1PY7YWoDweR"
+        }
+      ]
+    },
+    {
+      "type": "java",
+      "name": "Launch Deployment",
+      "request": "launch",
+      "mainClass": "com.axlabs.helloworld.Deployment",
+      "projectName": "neow3j-boilerplate"
+    }
+  ]
+}
