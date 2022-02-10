@@ -5,9 +5,9 @@ to compile and test a "Hello World" smart contract for Neo N3.
 
 ## Quickstart
 
-> [Java 1.8](https://adoptopenjdk.net/installation.html) (or higher) is required.
-> [Docker](https://www.docker.com/products/docker-desktop) is required for running smart contract 
-  tests.
+[Java 8](https://adoptium.net/) (or higher) is required.  
+[Docker](https://www.docker.com/products/docker-desktop) is required for running smart contract
+tests.
 
 1. **Clone this git repo:**
 
@@ -48,7 +48,7 @@ drwxr-xr-x  7 user  wheel  224 23 Feb 17:40 ..
 6. **Deploy the contract**
 
 - Run a local [Neo Express](https://github.com/neo-project/neo-express) instance. The project 
-- includes a Neo Express configuration file.
+  includes a Neo Express configuration file.
 - Fund Alice's account: `neoxp transfer 100 GAS genesis alice`
 - Go to the `com.axlabs.helloworld.Deployment` class and run it.
 

@@ -22,8 +22,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class HelloWorldSmartContractTest {
 
     private static final String GET_OWNER = "getOwner";
-    private static final String GET_A_STRING = "getAString";
-    private static final String OWNER_ADDRESS = "NXXazKH39yNFWWZF5MJ8tEN98VYHwzn7g3";
+    private static final String GET_A_STRING = "getStaticValue";
+    private static final String OWNER_ADDRESS = "NNSyinBZAr8HMhjj95MfkKD1PY7YWoDweR";
 
     @RegisterExtension
     private static ContractTestExtension ext = new ContractTestExtension();

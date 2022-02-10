@@ -15,7 +15,7 @@ public class HelloWorldSmartContract {
     static final String OWNER_KEY = "owner";
     static StorageContext ctx = Storage.getStorageContext();
 
-    static String aString = "${placeholder}";
+    static String staticValue = "${placeholder}";
 
     @OnDeployment
     public static void deploy(Object data, boolean update) {
@@ -28,7 +28,7 @@ public class HelloWorldSmartContract {
         return Storage.get(ctx, OWNER_KEY);
     }
 
-    public static String getAString() {
-        return aString;
+    public static String getStaticValue() {
+        return staticValue;
     }
 }
