@@ -1,4 +1,4 @@
-package com.axlabs.helloworld;
+package com.axlabs.boilerplate;
 
 import io.neow3j.compiler.CompilationUnit;
 import io.neow3j.compiler.Compiler;

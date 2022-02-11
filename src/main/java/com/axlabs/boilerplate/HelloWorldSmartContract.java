@@ -1,4 +1,4 @@
-package com.axlabs.helloworld;
+package com.axlabs.boilerplate;
 
 import io.neow3j.devpack.ByteString;
 import io.neow3j.devpack.Hash160;

@@ -1,4 +1,4 @@
-package com.axlabs.helloworld;
+package com.axlabs.boilerplate;
 
 import io.neow3j.contract.SmartContract;
 import io.neow3j.protocol.Neow3j;
