@@ -9,25 +9,25 @@ to compile and test a "Hello World" smart contract for Neo N3.
 [Docker](https://www.docker.com/products/docker-desktop) is required for running smart contract
 tests.
 
-1. **Clone this git repo:**
+#### 1. **Clone this git repo:**
 
 ```bash
 git clone https://github.com/neow3j/neow3j-boilerplate.git
 ```
 
-2. **Go to the project directory:**
+#### 2. **Go to the project directory:**
 
 ```bash
 cd neow3j-boilerplate
 ```
 
-3. **Compile the smart contract:**
+#### 3. **Compile the smart contract:**
 
 ```bash
 ./gradlew neow3jCompile
 ```
 
-4. **You will see the following output in the directory `./build/neow3j`:**
+#### 4. **You will see the following output in the directory `./build/neow3j`:**
 
 ```bash
 $ ls -la build/neow3j 
@@ -39,20 +39,20 @@ drwxr-xr-x  7 user  wheel  224 23 Feb 17:40 ..
 -rw-r--r--  1 user  wheel  430 23 Feb 17:40 HelloWorldSmartContract.nefdbgnfo
 ```
 
-5. **Run the contract test**
+#### 5. **Run the contract test**
 
 ```bash
 ./gradlew test
 ```
 
-6. **Deploy the contract**
+#### 6. **Deploy the contract**
 
 - Run a local [Neo Express](https://github.com/neo-project/neo-express) instance. The project 
   includes a Neo Express configuration file.
 - Fund Alice's account: `neoxp transfer 100 GAS genesis alice`
 - Go to the `com.axlabs.boilerplate.Deployment` class and run it.
 
-7. **Give us a GitHub star! :star::star::star:**
+#### 7. **Give us a GitHub star! :star::star::star:**
 
 ## About
 
@@ -64,4 +64,3 @@ documentation.
 
 Neow3j is an open-source project developed by the community and maintained by
 [AxLabs](https://axlabs.com).
-
