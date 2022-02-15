@@ -36,5 +36,5 @@ tasks.withType(Test) {
 }
 
 neow3jCompiler {
-    className = "com.axlabs.helloworld.HelloWorldSmartContract"
+    className = "com.axlabs.boilerplate.HelloWorldSmartContract"
 }
