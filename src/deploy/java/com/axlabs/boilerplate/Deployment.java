@@ -31,25 +31,21 @@ public class Deployment {
 
         Account deploymentAccount = Account.fromWIF(ALICE_WIF);
         if (new GasToken(neow3j).getBalanceOf(deploymentAccount).intValue() == 0) {
-            throw new RuntimeException("Alice has no GAS. If you're running a neo express " +
-                    "instance run `neoxp transfer 100 GAS genesis alice` in a terminal in the " +
-                    "root directory of this project.");
+            throw new RuntimeException("Alice has no GAS. If you're running a neo express instance run `neoxp " +
+                    "transfer 100 GAS genesis alice` in a terminal in the root directory of this project.");
         }
         AccountSigner signer = AccountSigner.none(deploymentAccount);
 
         Map<String, String> substitutions = new HashMap<>();
         substitutions.put("${placeholder}", "my string value");
 
-        deployHelloWorldSmartContract(signer, deploymentAccount.getScriptHash(), substitutions,
-                neow3j);
+        deployHelloWorldSmartContract(signer, deploymentAccount.getScriptHash(), substitutions, neow3j);
     }
 
     private static Hash160 deployHelloWorldSmartContract(AccountSigner signer, Hash160 owner,
             Map<String, String> substitutions, Neow3j neow3j) throws Throwable {
 
-        CompilationUnit res = new Compiler().compile(
-                HelloWorldSmartContract.class.getCanonicalName(),
-                substitutions);
+        CompilationUnit res = new Compiler().compile(HelloWorldSmartContract.class.getCanonicalName(), substitutions);
 
         TransactionBuilder builder = new ContractManagement(neow3j)
                 .deploy(res.getNefFile(), res.getManifest(), hash160(owner))
@@ -61,8 +57,8 @@ public class Deployment {
 
         NeoApplicationLog log = neow3j.getApplicationLog(txHash).send().getApplicationLog();
         if (log.getExecutions().get(0).getState().equals(NeoVMStateType.FAULT)) {
-            throw new Exception("Failed to deploy contract. NeoVM error message: "
-                    + log.getExecutions().get(0).getException());
+            throw new Exception(
+                    "Failed to deploy contract. NeoVM error message: " + log.getExecutions().get(0).getException());
         }
 
         Hash160 contractHash = SmartContract.calcContractHash(signer.getScriptHash(),
@@ -70,4 +66,5 @@ public class Deployment {
         System.out.println("Contract Hash: " + contractHash);
         return contractHash;
     }
+
 }

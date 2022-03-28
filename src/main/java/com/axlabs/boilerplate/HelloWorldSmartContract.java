@@ -31,4 +31,5 @@ public class HelloWorldSmartContract {
     public static String getStaticValue() {
         return staticValue;
     }
+
 }
