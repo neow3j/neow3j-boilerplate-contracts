@@ -1,4 +1,4 @@
-# neow3j-boilerplate
+# neow3j-boilerplate-contracts
 
 This is a boilerplate project setup for Java smart contracts. It brings the minimum amount of code
 to compile and test a "Hello World" smart contract for Neo N3.
@@ -12,13 +12,13 @@ tests.
 #### 1. **Clone this git repo:**
 
 ```bash
-git clone https://github.com/neow3j/neow3j-boilerplate.git
+git clone https://github.com/neow3j/neow3j-boilerplate-contracts.git
 ```
 
 #### 2. **Go to the project directory:**
 
 ```bash
-cd neow3j-boilerplate
+cd neow3j-boilerplate-contracts
 ```
 
 #### 3. **Compile the smart contract:**
