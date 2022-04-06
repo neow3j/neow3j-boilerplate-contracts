@@ -29,7 +29,7 @@
       "name": "Launch Deployment",
       "request": "launch",
       "mainClass": "com.axlabs.helloworld.Deployment",
-      "projectName": "neow3j-boilerplate"
+      "projectName": "neow3j-boilerplate-contracts"
     }
   ]
 }
