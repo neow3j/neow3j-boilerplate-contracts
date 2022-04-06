@@ -1,0 +1,4 @@
+transfer 10000 GAS genesis Alice
+transfer 10000 NEO genesis Alice
+transfer 10000 GAS genesis Bob
+transfer 10000 NEO genesis Bob

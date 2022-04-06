@@ -39,7 +39,9 @@ public class Deployment {
         Map<String, String> substitutions = new HashMap<>();
         substitutions.put("${placeholder}", "my string value");
 
-        deployHelloWorldSmartContract(signer, deploymentAccount.getScriptHash(), substitutions, neow3j);
+        Hash160 contractHash =
+                deployHelloWorldSmartContract(signer, deploymentAccount.getScriptHash(), substitutions, neow3j);
+        System.out.println("Contract Hash: " + contractHash);
     }
 
     private static Hash160 deployHelloWorldSmartContract(AccountSigner signer, Hash160 owner,
@@ -61,10 +63,8 @@ public class Deployment {
                     "Failed to deploy contract. NeoVM error message: " + log.getExecutions().get(0).getException());
         }
 
-        Hash160 contractHash = SmartContract.calcContractHash(signer.getScriptHash(),
-                res.getNefFile().getCheckSumAsInteger(), res.getManifest().getName());
-        System.out.println("Contract Hash: " + contractHash);
-        return contractHash;
+        return SmartContract.calcContractHash(signer.getScriptHash(), res.getNefFile().getCheckSumAsInteger(),
+                res.getManifest().getName());
     }
 
 }
