@@ -76,6 +76,7 @@ public class HelloWorldSmartContractTest {
     }
 
     // 1./2. Test the deployment and getting the contract owner
+    @Order(1)
     @Test
     public void testGetOwner() throws IOException {
         NeoInvokeFunction result = contract.callInvokeFunction("getContractOwner");
@@ -83,37 +84,29 @@ public class HelloWorldSmartContractTest {
     }
 
     // 3. Change the contract owner
+    @Order(6)
     @Test
     public void testChangeOwner() throws Throwable {
         NeoInvokeFunction result = contract.callInvokeFunction("getContractOwner");
         assertThat(result.getInvocationResult().getStack(), hasSize(1));
         assertThat(result.getInvocationResult().getStack().get(0).getAddress(), is(alice.getAddress()));
 
+        // Change the contract owner, check that the response has no error and await its execution.
         TransactionBuilder b = contract.invokeFunction("changeContractOwner", hash160(bob));
         Transaction tx = b.signers(AccountSigner.calledByEntry(alice)).sign();
         NeoSendRawTransaction response = tx.send();
         assertFalse(response.hasError());
 
-        Await.waitUntilTransactionIsExecuted(response.getSendRawTransaction().getHash(), ext.getNeow3j());
+        Await.waitUntilTransactionIsExecuted(response.getSendRawTransaction().getHash(), neow3j);
 
+        // Check that the new contract owner is now Bob.
         String newOwner = contract.callInvokeFunction("getContractOwner")
                 .getInvocationResult().getStack().get(0).getAddress();
         assertThat(newOwner, is(bob.getAddress()));
-
-        b = contract.invokeFunction("changeContractOwner", hash160(alice));
-        tx = b.signers(AccountSigner.calledByEntry(bob)).sign();
-        response = tx.send();
-        assertFalse(response.hasError());
-
-        Await.waitUntilTransactionIsExecuted(response.getSendRawTransaction().getHash(), ext.getNeow3j());
-
-        newOwner = contract.callInvokeFunction("getContractOwner")
-                .getInvocationResult().getStack().get(0).getAddress();
-        assertThat(newOwner, is(alice.getAddress()));
     }
 
     // 4.0 Receive GAS
-    @Order(1)
+    @Order(2)
     @Test
     public void testReceiveGas() throws Throwable {
         GasToken gasToken = new GasToken(neow3j);
@@ -137,7 +130,7 @@ public class HelloWorldSmartContractTest {
         NeoApplicationLog.Execution exec = log.getExecutions().get(0);
         assertThat(exec.getNotifications(), hasSize(2));
         NeoApplicationLog.Execution.Notification notification1 = exec.getNotifications().get(1);
-        assertThat(notification1.getEventName(), is("onGasPayment"));
+        assertThat(notification1.getEventName(), is("GasPayment"));
         assertThat(notification1.getContract(), is(contract.getScriptHash()));
         assertThat(notification1.getState().getList().get(0).getAddress(), is(bob.getAddress()));
         assertThat(notification1.getState().getList().get(1).getInteger(), is(amount));
@@ -159,7 +152,7 @@ public class HelloWorldSmartContractTest {
     }
 
     // 6. Withdraw GAS from contract
-    @Order(4)
+    @Order(5)
     @Test
     public void testWithdrawGas() throws Throwable {
         GasToken gasToken = new GasToken(neow3j);
@@ -183,7 +176,7 @@ public class HelloWorldSmartContractTest {
     }
 
     // 7.0 Call another contract
-    @Order(2)
+    @Order(3)
     @Test
     public void testCallAnotherContract() throws IOException {
         BigInteger contractBalance = contract.callInvokeFunction("getContractGasBalance")
@@ -192,7 +185,7 @@ public class HelloWorldSmartContractTest {
     }
 
     // 7.1 Call another contract using a wrapper class
-    @Order(3)
+    @Order(4)
     @Test
     public void testCallAnotherContractWithWrapper() throws IOException {
         BigInteger contractBalance = contract.callInvokeFunction("getContractGasBalanceWithWrapper")

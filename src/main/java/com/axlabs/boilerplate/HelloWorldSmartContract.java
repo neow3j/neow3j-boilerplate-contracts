@@ -60,8 +60,8 @@ public class HelloWorldSmartContract {
         onPayment.fire(from, amount);
     }
 
-    // 5. Throw an event 'onGasPayment(from, amount)' when receiving funds
-    @DisplayName("onGasPayment")
+    // 5. Throw an event 'GasPayment(from, amount)' when receiving funds
+    @DisplayName("GasPayment")
     public static Event2Args<Hash160, Integer> onPayment;
 
     // 6. Withdraw GAS (verify withdrawal transaction)
