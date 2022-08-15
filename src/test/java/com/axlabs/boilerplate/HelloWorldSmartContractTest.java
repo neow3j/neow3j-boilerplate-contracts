@@ -26,7 +26,7 @@ public class HelloWorldSmartContractTest {
     private static final String OWNER_ADDRESS = "NNSyinBZAr8HMhjj95MfkKD1PY7YWoDweR";
 
     @RegisterExtension
-    private static ContractTestExtension ext = new ContractTestExtension();
+    private static final ContractTestExtension ext = new ContractTestExtension();
 
     private static Neow3j neow3j;
     private static SmartContract contract;
