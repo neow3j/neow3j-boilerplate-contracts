@@ -1,7 +1,6 @@
 package com.axlabs.boilerplate;
 
 import io.neow3j.contract.SmartContract;
-import io.neow3j.protocol.Neow3j;
 import io.neow3j.protocol.core.response.NeoInvokeFunction;
 import io.neow3j.test.ContractTest;
 import io.neow3j.test.ContractTestExtension;
@@ -28,12 +27,10 @@ public class HelloWorldSmartContractTest {
     @RegisterExtension
     private static ContractTestExtension ext = new ContractTestExtension();
 
-    private static Neow3j neow3j;
     private static SmartContract contract;
 
     @BeforeAll
     public static void setUp() {
-        neow3j = ext.getNeow3j();
         contract = ext.getDeployedContract(HelloWorldSmartContract.class);
     }
 
