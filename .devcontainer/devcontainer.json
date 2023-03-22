@@ -22,10 +22,12 @@
 		"vscode": {
 			// Add the IDs of extensions you want installed when the container is created.
 			"extensions": [
-				"vsls-contrib.codetour",
 				"vscjava.vscode-java-pack",
+				"vsls-contrib.codetour",
 				"ngd-seattle.neo3-visual-tracker",
-				"ngd-seattle.neo-contract-debug"
+				"ngd-seattle.neo-contract-debug",
+				"vscjava.vscode-gradle",
+				"ms-azuretools.vscode-docker"
 			],
 			
 			// Set *default* container specific settings.json values on container create.
