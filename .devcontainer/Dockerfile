@@ -2,7 +2,7 @@
 # [Choice] Java version (use -bullseye variants on local arm64/Apple Silicon): 8, 11, 17, 8-bullseye, 11-bullseye, 17-bullseye, 8-buster, 11-buster, 17-buster
 ARG VARIANT=11-bullseye
 
-FROM mcr.microsoft.com/dotnet/sdk:6.0 as dotnet-builder
+FROM mcr.microsoft.com/dotnet/sdk:7.0.202-bullseye-slim-amd64 as dotnet-builder
 
 FROM mcr.microsoft.com/vscode/devcontainers/java:${VARIANT}
 
@@ -107,7 +107,7 @@ ENV \
     # Do not show first run text
     DOTNET_NOLOGO=true \
     # SDK version
-    DOTNET_SDK_VERSION=6.0.201 \
+    DOTNET_SDK_VERSION=7.0.202 \
     # Enable correct mode for dotnet watch (only mode supported in a container)
     DOTNET_USE_POLLING_FILE_WATCHER=true \
     # Unset Logging__Console__FormatterName from aspnet base image
