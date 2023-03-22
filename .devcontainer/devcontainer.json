@@ -1,21 +1,23 @@
 {
 	"name": "neow3j-boilerplate-contracts",
-	// "image": "ghcr.io/axlabs/yaky-docker/java8:latest",
 	"build": {
 		"dockerfile": "Dockerfile",
-		"args": {
-			// Update the VARIANT arg to pick a Java version: 11, 17
-			// Append -bullseye or -buster to pin to an OS version.
-			// Use the -bullseye variants on local arm64/Apple Silicon.
-			"VARIANT": "11-bullseye",
-			// Options
-			"INSTALL_MAVEN": "false",
-			"INSTALL_GRADLE": "true",
-			"GRADLE_VERSION": "7.4.1",
-			"NODE_VERSION": "12"
+		"args": { }
+	},
+	"features": {
+		"ghcr.io/devcontainers/features/java:1": {
+			"version": "none",
+			"installMaven": "false",
+			"installGradle": "true",
+			"gradleVersion": "8.0.2"
+		},
+		"ghcr.io/devcontainers/features/docker-in-docker:2": {
+			"version": "latest",
+			"moby": true,
+			"dockerDashComposeVersion": "v1"
 		}
 	},
-	
+
 	// Configure tool-specific properties.
 	"customizations": {
 		// Configure properties specific to VS Code.
@@ -26,14 +28,16 @@
 				"vsls-contrib.codetour",
 				"ngd-seattle.neo3-visual-tracker",
 				"ngd-seattle.neo-contract-debug",
-				"vscjava.vscode-gradle",
 				"ms-azuretools.vscode-docker"
 			],
 			
 			// Set *default* container specific settings.json values on container create.
-			// "settings": {
-			// 	"terminal.integrated.shell.linux": "/bin/bash"
-			// }
+			"settings": {
+				"java.import.gradle.enabled": true,
+				"java.import.gradle.wrapper.enabled": true,
+				"java.autobuild.enabled": true,
+				"java.project.resourceFilters": []
+			}
 		}
 	},
 	
@@ -44,5 +48,6 @@
 	"postCreateCommand": "",
 
 	// Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
-	"remoteUser": "yaky"
+	//"remoteUser": "yaky"
+	"remoteUser": "root"
 }
