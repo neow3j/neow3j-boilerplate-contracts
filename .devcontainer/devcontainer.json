@@ -36,7 +36,8 @@
 				"java.import.gradle.enabled": true,
 				"java.import.gradle.wrapper.enabled": true,
 				"java.autobuild.enabled": true,
-				"java.project.resourceFilters": []
+				"java.project.resourceFilters": [],
+				"extensions.ignoreRecommendations": true
 			}
 		}
 	},
