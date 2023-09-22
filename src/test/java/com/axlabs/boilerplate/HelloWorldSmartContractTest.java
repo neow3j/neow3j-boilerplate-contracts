@@ -12,6 +12,13 @@ import java.io.IOException;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/**
+ * <b>IMPORTANT:</b> The neow3j test framework (and with it its ContractTestExtension) do NOT support Neo 3.6.0 yet
+ * (hence, the use of the 3.20.2 version for neow3j's devpack-test dependency in the build.gradle file). This means,
+ * that any feature that was introduced with the Neo 3.6.0 release cannot be tested with this extension. Also, it
+ * might be the case that a test case passes with Neo 3.5.0, but does not any longer with Neo 3.6.0. So, be aware of
+ * this when using the test framework for now, and try to test critical parts with a separate Neo 3.6.0 node.
+ */
 @ContractTest(blockTime = 1, contracts = HelloWorldSmartContract.class)
 public class HelloWorldSmartContractTest {
 
