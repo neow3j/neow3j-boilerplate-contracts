@@ -1,6 +1,6 @@
 package com.axlabs.boilerplate;
 
-import io.neow3j.devpack.ByteString;
+import io.neow3j.devpack.Hash160;
 import io.neow3j.devpack.Storage;
 import io.neow3j.devpack.annotations.DisplayName;
 import io.neow3j.devpack.annotations.ManifestExtra;
@@ -23,8 +23,8 @@ public class HelloWorldSmartContract {
         Storage.put(getStorageContext(), ownerKey, addressToScriptHash("NNSyinBZAr8HMhjj95MfkKD1PY7YWoDweR"));
     }
 
-    public static ByteString getOwner() {
-        return Storage.get(getReadOnlyContext(), ownerKey);
+    public static Hash160 getOwner() {
+        return Storage.getHash160(getReadOnlyContext(), ownerKey);
     }
 
     public static String getStaticValue() {
