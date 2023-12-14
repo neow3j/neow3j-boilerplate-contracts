@@ -6,3 +6,5 @@
 .settings
 build/
 bin/
+
+.DS_Store
