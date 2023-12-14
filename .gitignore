@@ -1,4 +1,4 @@
-.vscode/settings.json
+.vscode/
 .idea/
 .gradle/
 .classpath
@@ -6,3 +6,6 @@
 .settings
 build/
 bin/
+
+.DS_Store
+.java-version
