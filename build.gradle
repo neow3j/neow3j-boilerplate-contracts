@@ -6,6 +6,7 @@ plugins {
 group 'com.axlabs'
 version '1.0-SNAPSHOT'
 
+// The neow3j compiler only supports Java 8.
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
