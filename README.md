@@ -3,26 +3,6 @@
 This is a boilerplate project setup for Java smart contracts. It brings the minimum amount of code
 to compile and test a "Hello World" smart contract for Neo N3.
 
-<table>
-  <tr>
-    <td>
-      <a href="https://marketplace.digitalocean.com/apps/1clicknode-for-neo">
-      <picture>
-        <source media="(prefers-color-scheme: dark)" srcset="https://cdn.axlabs.net/1clicknode-logos/1clicknode-logo-for-dark.png"
-          width="200">
-        <source media="(prefers-color-scheme: light)" srcset="https://cdn.axlabs.net/1clicknode-logos/1clicknode-logo-for-light.png"
-          width="200">
-        <img alt="1ClickNode Logo" src="">
-      </picture> 
-    </a>
-    </td>
-    <td>
-      If you are in need of a testnet or mainnet Neo node for your dApp but don't want to spend hours on setup, check 
-      out <a href="https://marketplace.digitalocean.com/apps/1clicknode-for-neo">1ClickNode</a>.
-    </td>
-  </tr>
-</table>
-
 ## Quickstart
 
 [Java 8](https://adoptium.net/) (or higher) is required.  
