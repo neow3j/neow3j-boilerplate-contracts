@@ -6,8 +6,6 @@ import io.neow3j.devpack.annotations.DisplayName;
 import io.neow3j.devpack.annotations.ManifestExtra;
 import io.neow3j.devpack.annotations.OnDeployment;
 
-import static io.neow3j.devpack.Storage.getReadOnlyContext;
-import static io.neow3j.devpack.Storage.getStorageContext;
 import static io.neow3j.devpack.StringLiteralHelper.addressToScriptHash;
 
 @DisplayName("HelloWorld")
@@ -20,11 +18,11 @@ public class HelloWorldSmartContract {
 
     @OnDeployment
     public static void deploy(Object data, boolean update) {
-        Storage.put(getStorageContext(), ownerKey, addressToScriptHash("NNSyinBZAr8HMhjj95MfkKD1PY7YWoDweR"));
+        Storage.put(ownerKey, addressToScriptHash("NNSyinBZAr8HMhjj95MfkKD1PY7YWoDweR"));
     }
 
     public static Hash160 getOwner() {
-        return Storage.getHash160(getReadOnlyContext(), ownerKey);
+        return Storage.getHash160(ownerKey);
     }
 
     public static String getStaticValue() {
